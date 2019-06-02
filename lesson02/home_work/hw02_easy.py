@@ -13,13 +13,35 @@
 
 # Подсказка: воспользоваться методом .format()
 
+fruits = ["абрикос", "инжир", "лайм", "киви", "дуриан", "авокадо", "апельсин", "грейпфрут"]
+
+for fruit in fruits:
+	print(str(fruits.index(fruit) + 1), ".", "{:>12}".format(fruit), sep="")
+
+print()
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
 
+colors_1 = ["yellow", "green", "blue", "brown", "white", "red", "orange", "pink"]
+colors_2 = ["gray", "violet", "green", "blue", "black", "purple", "orange", "white"]
+
+for color in colors_2:
+    if color in colors_1:
+	    colors_1.remove(color)
+		
+print(colors_1)
 
 # Задача-3:
 # Дан произвольный список из целых чисел.
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
+
+import random
+ 
+some_data = [random.randint(1, 100) for i in range(10)]
+print("Исходный список:\n", some_data)
+
+data = [x/4 if x%2 == 0 else x*2 for x in some_data]
+print("Новый список:\n", data)
